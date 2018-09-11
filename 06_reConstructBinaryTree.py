@@ -12,7 +12,9 @@ Created on Tue Sep 11 18:18:39 2018
 
 1.前序的第一个就是根节点root
 2.在中序序列中找到前序序列第一个数的位置i
-3.
+3.递归调用函数，前序：前序的第二个到第i个，中序：中序的前i个
+4.递归结束的条件：前序与中序序列中元素有不一样的时候，或者前序和中序为None时
+5.层次打印出来：
 """
 
 class TreeNode:
@@ -55,9 +57,23 @@ def PrintNodeAtLevel(treeNode, level):
         return 1
     PrintNodeAtLevel(treeNode.left, level-1)
     PrintNodeAtLevel(treeNode.right, level-1)
+
+
 def PrintNodeByLevel(treeNode, depth):
     for level in range(depth):
+        print("level:", level)
         PrintNodeAtLevel(treeNode, level)
+
+# 不知道树深 直接按层次遍历输出
+def PrintNodeByLevel2(treeNode):
+    level = 0
+    while 1:
+        print("level", level)
+        if not PrintNodeAtLevel(treeNode, level):
+            break
+        level += 1
+        
 
 
 PrintNodeByLevel(newTree, 5)
+PrintNodeByLevel2(newTree)
