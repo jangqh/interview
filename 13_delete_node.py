@@ -39,7 +39,6 @@ class Solution:
             pToBeDeleted.__del__()
 
 
-
 node1 = ListNode(10)
 node2 = ListNode(11)
 node3 = ListNode(12)
