@@ -22,8 +22,8 @@ class Solution:
             return []
         start = 0
         
-    
-    
+
+
 if __name__ == '__main__':
     matrix = [[1,2,3,4],
               [12,13,14,5],
